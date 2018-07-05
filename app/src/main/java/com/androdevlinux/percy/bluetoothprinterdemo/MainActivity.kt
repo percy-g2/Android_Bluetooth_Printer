@@ -16,6 +16,11 @@ import java.io.IOException
 import java.nio.charset.Charset
 import java.util.*
 
+
+/**
+ * Created by percy on 05/07/2018.
+ */
+
 class MainActivity : AppCompatActivity(), Runnable {
     private val applicationUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
     private var bluetoothAdapter: BluetoothAdapter? = null
@@ -65,7 +70,12 @@ class MainActivity : AppCompatActivity(), Runnable {
                 object : Thread() {
                     override fun run() {
                         try {
-                            bluetoothSocket!!.outputStream.write(edtPrintContent!!.text.toString().toByteArray(Charset.forName("UTF-8")))
+                            if (btnBoldPrint.isChecked) {
+                                bluetoothSocket!!.outputStream.write(ESCPOSCommands.FS_FONT_SIZE_BOLD + edtPrintContent!!.text.toString().toByteArray(Charset.forName("UTF-8")))
+                            } else {
+                                bluetoothSocket!!.outputStream.write(ESCPOSCommands.FS_FONT_SIZE_NON_BOLD + edtPrintContent!!.text.toString().toByteArray(Charset.forName("UTF-8")))
+                            }
+
                         } catch (e: Exception) {
                             e.printStackTrace()
                             val alertMessage = Message()
@@ -80,11 +90,30 @@ class MainActivity : AppCompatActivity(), Runnable {
             }
         }
 
+        btnLineFeed!!.setOnClickListener {
+            object : Thread() {
+                override fun run() {
+                    try {
+                        bluetoothSocket!!.outputStream.write(ESCPOSCommands.LF)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        val alertMessage = Message()
+                        alertMessage.obj = "Check your connection with printer!"
+                        handler.sendMessage(alertMessage)
+                    }
+
+                }
+            }.start()
+        }
         btnSamplePrint!!.setOnClickListener {
             object : Thread() {
                 override fun run() {
                     try {
-                        bluetoothSocket!!.outputStream.write(" \n\n  Test Print \n\n  Hello From MainActivity".toByteArray(Charset.forName("UTF-8")))
+                        if (btnBoldPrint.isChecked) {
+                            bluetoothSocket!!.outputStream.write(ESCPOSCommands.FS_FONT_SIZE_BOLD + " \n\n  Test Print \n\n  Hello From MainActivity".toByteArray(Charset.forName("UTF-8")))
+                        } else {
+                            bluetoothSocket!!.outputStream.write(ESCPOSCommands.FS_FONT_SIZE_NON_BOLD + " \n\n  Test Print \n\n  Hello From MainActivity".toByteArray(Charset.forName("UTF-8")))
+                        }
                     } catch (e: Exception) {
                         e.printStackTrace()
                         val alertMessage = Message()

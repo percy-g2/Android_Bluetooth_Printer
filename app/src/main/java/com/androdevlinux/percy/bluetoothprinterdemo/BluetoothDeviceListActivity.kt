@@ -12,6 +12,10 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import kotlinx.android.synthetic.main.device_list.*
 
+/**
+ * Created by percy on 05/07/2018.
+ */
+
 class BluetoothDeviceListActivity : Activity() {
     private var bluetoothAdapter: BluetoothAdapter? = null
 

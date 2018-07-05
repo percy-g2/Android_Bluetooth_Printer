@@ -12,4 +12,6 @@
     <string name="disconnect_device">Disconnect Device</string>
     <string name="sample_print">Sample Print</string>
     <string name="text_print">Text Print</string>
+    <string name="line_feed">Line Feed</string>
+    <string name="bold_print">Bold Print</string>
 </resources>
