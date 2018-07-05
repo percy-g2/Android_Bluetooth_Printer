@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Bluetooth Printer</string>
+    <string name="action_settings">Settings</string>
+    <string name="connected_device">Connected device</string>
+    <string name="none">None</string>
+    <string name="find_device">Find Device</string>
+    <string name="printer_text">Printer Text</string>
+    <string name="message">Type your message you want to print.</string>
+    <string name="bluetooth_printers">Bluetooth Printers</string>
+    <string name="device_name">Device Name :</string>
+    <string name="device_address">Device Address :</string>
+    <string name="disconnect_device">Disconnect Device</string>
+    <string name="sample_print">Sample Print</string>
+    <string name="text_print">Text Print</string>
+</resources>
