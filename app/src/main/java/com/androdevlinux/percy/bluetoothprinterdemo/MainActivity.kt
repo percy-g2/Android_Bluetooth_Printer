@@ -176,7 +176,9 @@ class MainActivity : AppCompatActivity(), Runnable {
         try {
             nOpenSocket.close()
             val alertMessage = Message()
-            alertMessage.obj = "Connection Failed "
+            alertMessage.obj = "Connection Failed"
+            device_address!!.text = resources.getString(R.string.none)
+            device_name!!.text = resources.getString(R.string.none)
             handler.sendMessage(alertMessage)
             Log.i(TAG, "SocketClosed")
         } catch (e: IOException) {
