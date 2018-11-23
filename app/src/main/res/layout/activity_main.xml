@@ -5,18 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/find_device"
             android:layout_margin="2dp"
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
             android:text="@string/find_device"
             android:textColor="@android:color/white" />
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/disconnect_device"
             android:layout_margin="2dp"
             android:layout_width="match_parent"
@@ -123,7 +123,7 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSamplePrint"
                 android:layout_width="0dp"
                 android:layout_margin="2dp"
@@ -133,7 +133,7 @@
                 android:text="@string/sample_print"
                 android:textColor="@android:color/white" />
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnPrintText"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -150,7 +150,7 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLineFeed"
                 android:layout_width="0dp"
                 android:layout_margin="2dp"
@@ -160,7 +160,7 @@
                 android:text="@string/line_feed"
                 android:textColor="@android:color/white" />
 
-            <android.support.v7.widget.AppCompatCheckBox
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/btnBoldPrint"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
